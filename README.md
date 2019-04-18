@@ -1,2 +1,0 @@
-# ReactNameChecker
-Created with CodeSandbox
