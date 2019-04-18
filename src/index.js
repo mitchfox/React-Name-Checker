@@ -1,21 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom";
 
 import "./styles.css";
 
 function App() {
+  const [name, setName] = useState("");
+
   return (
     <div className="App">
-      <h1>Hello, ...</h1>
-      <h2>React Name Checker</h2>
-      <form
-        onSubmit={event => {
-          event.preventDefault();
-          console.log(event.target.elements.name.value);
-        }}
-      >
+      <h1 id="title">Hello, {name}</h1>
+      <h2 id="subtitle">React Name Checker</h2>
+      <form>
         <label htmlFor="name">Please enter your name: </label>
-        <input id="name" name="name" type="text" />
+        <input
+          type="text"
+          name="name"
+          id="name"
+          value={name}
+          onChange={event => {
+            setName(event.target.value);
+          }}
+        />
+
         <button type="submit">Submit</button>
       </form>
     </div>
